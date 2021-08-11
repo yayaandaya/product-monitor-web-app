@@ -20,3 +20,26 @@ Route::get('/welcome', function () {
 Route::get('/', function () {
     return view('home');
 });
+
+Route::get('/list-product', function () {
+    return view('list-product');
+});
+
+Route::get('/product-history/{id}', function () {
+    return view('product-history');
+});
+
+Route::group(['prefix' => 'api', 'as' => 'api'], function () {
+
+    Route::get('/', 'ProductController@getList');
+    Route::get('/{id}', 'ProductController@get');
+    Route::post('/', 'ProductController@create');
+
+    Route::get('/{id}/history', 'ProductPriceHistoryController@getList');
+    Route::get('/{id}/history-chart', 'ProductPriceHistoryController@getChart');
+    Route::get('/{id}/photo', 'ProductPhotoController@getList');
+});
+
+Route::prefix('/crawler')->group(function () {
+    Route::get('/price', 'ProductPriceHistoryController@create');
+});

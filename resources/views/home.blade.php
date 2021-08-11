@@ -24,12 +24,16 @@
                 </div>
             </div>
             <div class="suggestion-wrap">
-                <span>Ruang Tamu</span>
-                <span>Kamar Tidur</span>
-                <span>Ruang Makan</span>
-                <span>Ruang Kerja</span>
-                <span>Dekorasi</span>
-                <span>See All Product</span>
+<!--                <span>Ruang Tamu</span>-->
+<!--                <span>Kamar Tidur</span>-->
+<!--                <span>Ruang Makan</span>-->
+<!--                <span>Ruang Kerja</span>-->
+<!--                <span>Dekorasi</span>-->
+<!--                <span>See All Product</span>-->
+                <span><a href="list-product" style="float: right">
+                    See Product List
+                </a></span>
+
             </div>
         </fieldset>
     </form>
