@@ -10,7 +10,7 @@ This is simple project using laravel to crawling and scrapping website to monito
 > Make sure you already install mysql in your machine.
 
 > Make sure you already install php in your machine (make sure your php minimum version is 7.0),
-for easy to use i recommend you to install xampp through this link https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/7.0.27/ 
+for easy to use i recommend you to install xampp through this link https://deac-ams.dl.sourceforge.net/project/xampp/XAMPP%20Mac%20OS%20X/7.3.29/xampp-osx-7.3.29-2-installer.dmg 
 
 > Make sure you already install composer in your machine,
   if you don't have composer in your machine you can install through this link https://getcomposer.org/download/
