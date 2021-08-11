@@ -72,8 +72,7 @@ class ProductController extends Controller
             $request_photo = new Request();
             $request_photo->replace([
                 "product_id" => $product->id,
-//                "photos" => $photos ?? []
-                "photos" => $photos
+                "photos" => $photos ? $photos : $photos
             ]);
             app('App\Http\Controllers\ProductPhotoController')->create($request_photo);
 

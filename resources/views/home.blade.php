@@ -26,16 +26,7 @@
                 </div>
             </div>
             <div class="suggestion-wrap">
-<!--                <span>Ruang Tamu</span>-->
-<!--                <span>Kamar Tidur</span>-->
-<!--                <span>Ruang Makan</span>-->
-<!--                <span>Ruang Kerja</span>-->
-<!--                <span>Dekorasi</span>-->
-<!--                <span>See All Product</span>-->
-                <span><a href="list-product" style="float: right">
-                    See Product List
-                </a></span>
-
+                <span><a href="list-product" style="float: right"> Product List</a></span>
             </div>
         </fieldset>
     </form>
@@ -55,7 +46,6 @@
     });
 
     function addLink() {
-        console.log($('#link').val());
         if ($('#form').validator('validate').has('.has-error').length === 0){
             $.ajax({
                 type: "POST",
@@ -67,15 +57,13 @@
                     link : $('#link').val()
                 }),
                 success: function(result) {
-                    console.log(result);
                     if(result != null){
-                        $('#link').val('')
-                        //alert('Success Add Link')
+                        $('#link').val('');
+                        alert('Success Add Link');
                     }
                 },
                 error: function(err) {
-                    console.log(err);
-                    //alert(err.responseJSON.message);
+                    alert(err.responseJSON.message);
                 }
             });
         }

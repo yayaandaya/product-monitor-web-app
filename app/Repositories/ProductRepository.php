@@ -54,8 +54,7 @@ class ProductRepository implements ProductInterface
     public function getPagination($limit)
     {
         return Product::where('is_deleted', false)
-//            ->paginate($limit ?? 5);
-            ->paginate($limit);
+            ->paginate($limit ? $limit : 5);
     }
 
     public function getById($id)
