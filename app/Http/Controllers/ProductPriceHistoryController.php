@@ -9,6 +9,10 @@
 namespace App\Http\Controllers;
 
 
+use App\Interfaces\ProductInterface;
+use App\Interfaces\ProductPriceHistoryInterface;
+use App\Transformers\ProductPriceHistoryTransformer;
+
 class ProductPriceHistoryController extends Controller
 {
     private $product;

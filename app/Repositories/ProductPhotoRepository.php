@@ -10,6 +10,7 @@ namespace App\Repositories;
 
 
 use App\Interfaces\ProductPhotoInterface;
+use App\Models\ProductPhoto;
 
 class ProductPhotoRepository implements ProductPhotoInterface
 {

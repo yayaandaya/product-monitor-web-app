@@ -9,6 +9,10 @@
 namespace App\Http\Controllers;
 
 
+use App\Interfaces\ProductPhotoInterface;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+
 class ProductPhotoController extends Controller
 {
     private $product_photo;

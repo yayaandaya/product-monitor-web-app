@@ -9,7 +9,9 @@
 namespace App\Models;
 
 
-class ProductPriceHistory
+use Illuminate\Database\Eloquent\Model;
+
+class ProductPriceHistory extends Model
 {
     /**
      * The table associated with the model.

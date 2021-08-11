@@ -9,6 +9,9 @@
 namespace App\Http\Controllers;
 
 
+use App\Helpers\Constant;
+use App\Http\Controllers\Crawler\FabelioController;
+
 class CrawlerController extends Controller
 {
     private function checkVendor($link) {

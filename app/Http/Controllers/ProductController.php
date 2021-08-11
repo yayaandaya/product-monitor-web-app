@@ -9,6 +9,13 @@
 namespace App\Http\Controllers;
 
 
+use App\Interfaces\ProductInterface;
+use App\Interfaces\ProductPhotoInterface;
+use App\Transformers\ProductTransformer;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
+
 class ProductController extends Controller
 {
     private $product;
@@ -42,7 +49,9 @@ class ProductController extends Controller
 
             //GET DATA
             $content = $crawling->getContent($request->link);
+
             $name = $crawling->getName($content);
+            $price = $crawling->getCurrentPrice($content);
             $description = $crawling->getDescription($content);
             $photos = $crawling->getPhoto($content);
 
@@ -114,7 +123,7 @@ class ProductController extends Controller
             }
             else{
                 return response([
-                    "error" => false
+                    "error" => true
                     , "data" => new \stdClass()
                 ],'404');
             }

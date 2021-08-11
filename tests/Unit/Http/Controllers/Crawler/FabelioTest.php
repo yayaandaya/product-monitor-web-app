@@ -23,7 +23,7 @@ class FabelioTest extends TestCase
     public function testGetContent()
     {
         $crawler = new FabelioController();
-        $response = $crawler->getContent("https://fabelio.com/ip/leroy-high-sideboards-kit.html");
+        $response = $crawler->getContent("https://fabelio.com/ip/meja-kantor-xaverius-fbf");
         $this->assertSame(gettype($response), 'string');
     }
 
@@ -32,7 +32,7 @@ class FabelioTest extends TestCase
         $content = file('tests/Assets/Crawler/FabelioContent.html');
         $crawler = new FabelioController();
         $response = $crawler->getName(implode('', $content));
-        $this->assertSame($response, 'Kabinet Leroy Pintu Kaca');
+        $this->assertSame($response, 'Meja Kantor Xaverius');
     }
 
     public function testGetNameFailed()
@@ -47,14 +47,14 @@ class FabelioTest extends TestCase
         $content = file('tests/Assets/Crawler/FabelioContent.html');
         $crawler = new FabelioController();
         $response = $crawler->getDescription(implode('', $content));
-        $this->assertSame($response, 'Sentuhan Gaya Mid Century Pada Kabinet Display');
+        $this->assertSame($response, 'Meja Kerja Xaverius yang keren ini bisa menjadi teman kerjamu sehari-hari. Kaki-kakinya yang kokoh tentu dapat menopang semua barangmu. Dengan tinggi 75 cm, kamu dapat melakukan berbagai aktivitasmu dengan nyaman. Pastinya dengan design yang ergonomis dan stylish, sudah bisa dipastikan produktivitas kamu dapat meningkat dengan tajam. Dilengkapi dengan tempat saluran kabel, tentu akan menjadi lebih rapi dibandingkan dengan sebelumnya. Jangan lupa letakkan Meja Kerja Xaverius ini di ruang kerjamu dan pasangkan dengan kursi kerja agar lebih mantappp. Buruan, tunggu apalagi? Segera hiasi ruanganmu dengan Meja Kerja Xaverius!');
     }
 
     public function testGetDescriptionFailed()
     {
         $crawler = new FabelioController();
-        $response = $crawler->getDescription('false content');
-        $this->assertSame($response, false);
+        $response = $crawler->getDescription('');
+        $this->assertSame($response, '');
     }
 
     public function testGetPhotoSuccess()
@@ -62,7 +62,7 @@ class FabelioTest extends TestCase
         $content = file('tests/Assets/Crawler/FabelioContent.html');
         $crawler = new FabelioController();
         $response = $crawler->getPhoto(implode('', $content));
-        $this->assertSame($response[0], 'https://m2fabelio.imgix.net/catalog/product/cache/small_image/300x300/beff4985b56e3afdbeabfc89641a4582/k/u/Kubos_2020_Frame_0.jpg');
+        $this->assertSame($response[0], 'https://cdn-m2.fabelio.com/catalog/product/k/u/kumi_ed_back.jpg?auto=format');
 
     }
 
@@ -84,7 +84,7 @@ class FabelioTest extends TestCase
     public function testGetCurrentPriceFailed()
     {
         $crawler = new FabelioController();
-        $response = $crawler->getDescription('false content');
-        $this->assertSame($response, false);
+        $response = $crawler->getDescription('');
+        $this->assertSame($response, '');
     }
 }

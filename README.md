@@ -54,7 +54,7 @@ $  php artisan migrate:refresh --seed
 
 ##### When using the scheduler for scrapping price, you only need to add the following Cron entry to your machine
 ```bash
-$  * * * * * cd /your-xampp-path/htdocs/product-monitoring && php artisan schedule:run >> /dev/null 2>&1
+$  * * * * * cd /your-xampp-path/htdocs/product-monitor-web-app && php artisan schedule:run >> /dev/null 2>&1
 ```
 
 ### How To run unit test
